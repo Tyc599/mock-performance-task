@@ -1,6 +1,6 @@
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     if (sprite.tileKindAt(TileDirection.Left, assets.tile`myTile`)) {
-        tiles.setTileAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), assets.tile`myTile`)
+        tiles.setTileAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), assets.tile`transparency16`)
         tiles.setWallAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), false)
     }
 })
