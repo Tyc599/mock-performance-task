@@ -1,3 +1,9 @@
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    if (sprite.tileKindAt(TileDirection.Left, assets.tile`transparency16`)) {
+        tiles.setTileAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), assets.tile`transparency16`)
+        tiles.setWallAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), true)
+    }
+})
 let P1_mario = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
