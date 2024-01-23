@@ -13,8 +13,6 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const tile5 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const tile6 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
     export const tile2 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile7 = image.ofBuffer(hex``);
@@ -22,6 +20,8 @@ namespace myTiles {
     export const tile8 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile9 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile6 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile10 = image.ofBuffer(hex``);
 
@@ -78,8 +78,6 @@ namespace myTiles {
             case "tile4":return tile4;
             case "myTile3":
             case "tile5":return tile5;
-            case "myTile4":
-            case "tile6":return tile6;
             case "myTile0":
             case "tile2":return tile2;
             case "myTile5":
@@ -88,6 +86,8 @@ namespace myTiles {
             case "tile8":return tile8;
             case "myTile7":
             case "tile9":return tile9;
+            case "myTile4":
+            case "tile6":return tile6;
             case "myTile8":
             case "tile10":return tile10;
         }
