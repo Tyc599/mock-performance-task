@@ -4,7 +4,7 @@ sprites.onDestroyed(SpriteKind.Player, function (sprite) {
         tiles.setWallAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), false)
     }
 })
-let P1_mario = sprites.create(assets.image`block`, SpriteKind.Player)
+let P1_mario = sprites.create(assets.image`myImage`, SpriteKind.Player)
 let P2luigi = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
