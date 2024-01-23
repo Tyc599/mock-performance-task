@@ -202,6 +202,25 @@ bb77bb77b77bb77bbb77b77bbbb77b7b77b7777bbb77bb77b77bb77bbb77b77bbbb77b7b77b7777b
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "7P,;vbAXf|r(rZa%g3T/":
+            case "block":return img`
+7 7 f 4 c f 4 c 7 7 7 f 4 c 7 7 
+7 f 4 c 7 f 4 c 7 7 7 7 f 4 c 7 
+7 f 4 c 7 f 4 c 7 7 7 7 f 4 c 7 
+7 f 4 c 7 f 4 c 7 7 7 7 7 f f 4 
+f 4 c 7 f 4 c 7 7 7 7 7 7 7 7 f 
+4 c 7 7 f 4 c 7 7 7 7 7 7 7 7 7 
+c 7 7 7 f 4 c 7 7 7 7 7 7 7 7 7 
+7 7 7 7 f 4 7 7 7 7 7 7 7 f f f 
+7 7 7 7 f 4 7 7 7 7 7 7 f 4 c 7 
+7 7 7 f 4 c 7 7 7 7 7 f 4 c 7 7 
+7 7 7 f 4 c 7 7 7 7 f 4 c 7 7 7 
+7 7 7 f 4 c 7 7 7 f 4 c 7 7 7 7 
+7 7 7 f 4 c 7 7 7 f 4 c 7 7 7 7 
+7 7 7 f 4 7 7 7 7 f 4 c 7 7 7 7 
+7 7 7 f 4 7 7 7 7 f 4 7 7 7 7 7 
+f f f 4 7 7 7 7 f 4 7 7 7 7 7 7 
+`;
         }
         return null;
     })
