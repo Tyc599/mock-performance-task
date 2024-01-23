@@ -4,42 +4,8 @@ sprites.onDestroyed(SpriteKind.Player, function (sprite) {
         tiles.setWallAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), false)
     }
 })
-let P1_mario = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-let P2luigi = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
+let P1_mario = sprites.create(assets.image`myImage`, SpriteKind.Player)
+let P2luigi = sprites.create(assets.image`myImage0`, SpriteKind.Player)
 let P3toad = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 

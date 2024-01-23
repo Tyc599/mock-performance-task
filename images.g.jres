@@ -4,6 +4,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "cityscape"
     },
+    "image4": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage1"
+    },
     "image2": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAPAP8AAADw3/3wIv8AAC/f/S8i3f/wIv/fLyLd8vAi/d/9Ii3y8CLd3f3/L/LwIv/9Lf8v8vAi3f8t8v3y8CLf/f3y//8AL9/9D///AAAv3/0AAAAAAPDwDwAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -13,11 +18,6 @@
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAPAP8AAADw3/3wd/8AAH/f/X933f/wd//ff3fd9/B3/d/9d3338Hfd3f3/f/fwd//9ff9/9/B33f999/338Hff/f33//8Af9/9D///AAB/3/0AAAAAAPDwDwAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage0"
-    },
-    "image4": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "myImage1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
