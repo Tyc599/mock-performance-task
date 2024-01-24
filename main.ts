@@ -21,12 +21,6 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         P3toad.vy = -75
     }
 })
-sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    if (sprite.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
-        tiles.setTileAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), assets.tile`transparency16`)
-        tiles.setWallAt(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left), false)
-    }
-})
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
 let P2luigi: Sprite = null
