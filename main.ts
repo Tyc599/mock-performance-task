@@ -5,6 +5,12 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     if (P2luigi.vy == 0) {
         P2luigi.vy = -75
     }
+    music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, location) {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    game.splash("womp womp")
+    game.reset()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.y += -2
@@ -13,21 +19,19 @@ controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     if (P4Peach.vy == 0) {
         P4Peach.vy = -75
     }
+    music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P1_mario.vy == 0) {
         P1_mario.vy = -75
     }
+    music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P3toad.vy == 0) {
         P3toad.vy = -75
     }
-})
-sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
-    game.splash("womp womp")
-    game.reset()
+    music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
