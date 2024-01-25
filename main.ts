@@ -25,10 +25,9 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
 })
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    sprites.destroy(P1_mario)
-    sprites.destroy(P2luigi)
-    sprites.destroy(P3toad)
-    sprites.destroy(P4Peach)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    game.splash("womp womp")
+    game.reset()
 })
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
