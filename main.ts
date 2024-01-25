@@ -1,3 +1,6 @@
+function hoponspt (mySprite: Sprite) {
+	
+}
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
         P2luigi.vy = -75
