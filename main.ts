@@ -21,6 +21,12 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         P3toad.vy = -75
     }
 })
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    sprites.destroy(P1_mario)
+    sprites.destroy(P2luigi)
+    sprites.destroy(P3toad)
+    sprites.destroy(P4Peach)
+})
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
 let P2luigi: Sprite = null
@@ -173,6 +179,3 @@ P1_mario.setStayInScreen(false)
 P2luigi.setStayInScreen(false)
 P3toad.setStayInScreen(false)
 P4Peach.setStayInScreen(false)
-game.onUpdate(function () {
-	
-})
