@@ -6,6 +6,11 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         P2luigi.vy = -75
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, location) {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    game.splash("womp womp")
+    game.reset()
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.y += -2
 })
@@ -25,10 +30,7 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
 })
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
-    sprites.destroy(P1_mario)
-    sprites.destroy(P2luigi)
-    sprites.destroy(P3toad)
-    sprites.destroy(P4Peach)
+	
 })
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
@@ -182,3 +184,8 @@ P1_mario.setStayInScreen(false)
 P2luigi.setStayInScreen(false)
 P3toad.setStayInScreen(false)
 P4Peach.setStayInScreen(false)
+game.onUpdate(function () {
+    if (true) {
+    	
+    }
+})
