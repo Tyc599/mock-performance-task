@@ -1,5 +1,5 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    if (tiles.tileAtLocationIsWall(tiles.getTileLocation(25, 127))) {
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(0, 0), assets.tile`myTile9`)) {
         tileUtil.setWalls(assets.tile`myTile2`, true)
     }
 })
@@ -11,7 +11,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, location) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
-    game.splash("womp womp")
+    game.splash("womp womp", "try again")
     game.reset()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
