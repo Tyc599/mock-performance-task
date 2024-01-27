@@ -14,6 +14,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, loc
     game.splash("womp womp")
     game.reset()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.y += -2
+})
 controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P4Peach.vy == 0) {
         P4Peach.vy = -75
