@@ -5,7 +5,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
 })
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
-        P2luigi.vy = -75
+        P2luigi.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
@@ -15,23 +15,29 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, loc
     game.reset()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    sprite.y += -2
+    if (sprite.vy > 0 && otherSprite.isHittingTile(CollisionDirection.Bottom)) {
+        sprite.ay = 0
+        sprite.vy = 0
+    } else if (otherSprite.vy > 0 && sprite.isHittingTile(CollisionDirection.Bottom)) {
+        otherSprite.ay = 0
+        otherSprite.vy = 0
+    }
 })
 controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P4Peach.vy == 0) {
-        P4Peach.vy = -75
+        P4Peach.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P1_mario.vy == 0) {
-        P1_mario.vy = -75
+        P1_mario.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P3toad.vy == 0) {
-        P3toad.vy = -75
+        P3toad.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
@@ -188,3 +194,9 @@ P1_mario.setStayInScreen(false)
 P2luigi.setStayInScreen(false)
 P3toad.setStayInScreen(false)
 P4Peach.setStayInScreen(false)
+game.onUpdateInterval(100, function () {
+    P1_mario.ay = 300
+    P2luigi.ay = 300
+    P3toad.ay = 300
+    P4Peach.ay = 300
+})
