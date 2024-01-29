@@ -1,8 +1,3 @@
-scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(0, 0), assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    }
-})
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
         P2luigi.vy = -85
@@ -207,4 +202,26 @@ game.onUpdateInterval(100, function () {
     P2luigi.ay = 300
     P3toad.ay = 300
     P4Peach.ay = 300
+})
+game.onUpdateInterval(100, function () {
+    if (P1_mario.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P2luigi.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P3toad.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P4Peach.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
 })
