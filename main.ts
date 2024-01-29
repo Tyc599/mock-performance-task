@@ -1,8 +1,3 @@
-scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(0, 0), assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    }
-})
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
         P2luigi.vy = -85
@@ -202,6 +197,28 @@ splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion
 splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera4, splitScreen.CameraRegion.BottomRight)
+game.onUpdate(function () {
+    if (P1_mario.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P2luigi.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P3toad.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+    if (P4Peach.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
+    }
+})
 game.onUpdateInterval(100, function () {
     P1_mario.ay = 300
     P2luigi.ay = 300
