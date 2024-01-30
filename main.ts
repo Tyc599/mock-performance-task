@@ -1,7 +1,11 @@
+scene.onHitWall(SpriteKind.Player, function (sprite, location) {
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(0, 0), assets.tile`myTile9`)) {
+        tileUtil.setWalls(assets.tile`myTile2`, true)
+    }
+})
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    let P2luigi2: Sprite = null
-    if (P2luigi2.vy == 0) {
-        P2luigi2.vy = -85
+    if (P2luigi.vy == 0) {
+        P2luigi.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
@@ -20,26 +24,27 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
     }
 })
 controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    let P4Peach2: Sprite = null
-    if (P4Peach2.vy == 0) {
-        P4Peach2.vy = -85
+    if (P4Peach.vy == 0) {
+        P4Peach.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    let P1_mario2: Sprite = null
-    if (P1_mario2.vy == 0) {
-        P1_mario2.vy = -85
+    if (P1_mario.vy == 0) {
+        P1_mario.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    let P3toad2: Sprite = null
-    if (P3toad2.vy == 0) {
-        P3toad2.vy = -85
+    if (P3toad.vy == 0) {
+        P3toad.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+let P4Peach: Sprite = null
+let P3toad: Sprite = null
+let P2luigi: Sprite = null
+let P1_mario: Sprite = null
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.setBackgroundImage(img`
     999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -165,10 +170,10 @@ scene.setBackgroundImage(img`
     `)
 tileUtil.setWalls(assets.tile`myTile2`, false)
 mp.setPlayerIndicatorsVisible(true)
-let P1_mario = sprites.create(assets.image`myImage`, SpriteKind.Player)
-let P2luigi = sprites.create(assets.image`myImage0`, SpriteKind.Player)
-let P3toad = sprites.create(assets.image`myImage1`, SpriteKind.Player)
-let P4Peach = sprites.create(assets.image`myImage2`, SpriteKind.Player)
+P1_mario = sprites.create(assets.image`myImage`, SpriteKind.Player)
+P2luigi = sprites.create(assets.image`myImage0`, SpriteKind.Player)
+P3toad = sprites.create(assets.image`myImage1`, SpriteKind.Player)
+P4Peach = sprites.create(assets.image`myImage2`, SpriteKind.Player)
 P1_mario.setPosition(2, 192)
 P2luigi.setPosition(25, 192)
 P3toad.setPosition(40, 192)
@@ -202,26 +207,4 @@ game.onUpdateInterval(100, function () {
     P2luigi.ay = 300
     P3toad.ay = 300
     P4Peach.ay = 300
-})
-game.onUpdateInterval(100, function () {
-    if (P1_mario.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    } else {
-        tileUtil.setWalls(assets.tile`myTile2`, false)
-    }
-    if (P2luigi.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    } else {
-        tileUtil.setWalls(assets.tile`myTile2`, false)
-    }
-    if (P3toad.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    } else {
-        tileUtil.setWalls(assets.tile`myTile2`, false)
-    }
-    if (P4Peach.tileKindAt(TileDirection.Left, assets.tile`myTile9`)) {
-        tileUtil.setWalls(assets.tile`myTile2`, true)
-    } else {
-        tileUtil.setWalls(assets.tile`myTile2`, false)
-    }
 })
