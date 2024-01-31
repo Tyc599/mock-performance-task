@@ -5,7 +5,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
 })
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
-        P2luigi.vy = -100
+        P2luigi.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
@@ -31,7 +31,7 @@ controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P1_mario.vy == 0) {
-        P1_mario.vy = -125
+        P1_mario.vy = -85
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
