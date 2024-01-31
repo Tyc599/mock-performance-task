@@ -242,6 +242,25 @@ f f f 4 7 7 7 7 f 4 7 7 7 7 7 7
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "image7":
+            case "GOOMBA":return img`
+. . . . . e e e e e e . . . . . 
+. . . . e e e e e e e e . . . . 
+. . . e e e e e e e e e e . . . 
+. . e f f e e e e e e f f e . . 
+. e e e 1 f e e e e f 1 e e e . 
+. e e e 1 f f e e f f 1 e e e . 
+e e e e 1 f 1 f f 1 f 1 e e e e 
+e e e e 1 1 1 e e 1 1 1 e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d d d d d d e e e e e 
+. e e e e d d d d d d e e e e . 
+. . . . d d d d d d d d . . . . 
+. . f f d d d d d d d d f f . . 
+. f f f f f d d d d f f f f f . 
+. f f f f f f d d f f f f f f . 
+. . f f f f f . . f f f f f . . 
+`;
         }
         return null;
     })

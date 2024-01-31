@@ -34,6 +34,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage3"
     },
+    "image7": {
+        "data": "hwQQABAAAAAAAADu7gAAAAAA7u7uDvAPAODu7u4O//8A/u7u7g7//+D+ERHu3v3/7u7/H97d/f/u7v4R3t3d/+7u7u/e3d0N7u7u797d3Q3u7v4R3t3d/+7u/x/e3f3/4P4REe7e/f8A/u7u7g7//wDg7u7uDv//AADu7u4O8A8AAADu7gAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "GOOMBA"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

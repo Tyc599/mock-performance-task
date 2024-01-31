@@ -1,6 +1,8 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    if (tiles.tileAtLocationEquals(tiles.getTileLocation(0, 0), assets.tile`myTile9`)) {
+    if (sprite.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
         tileUtil.setWalls(assets.tile`myTile2`, true)
+    } else {
+        tileUtil.setWalls(assets.tile`myTile2`, false)
     }
 })
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
@@ -175,6 +177,7 @@ P1_mario = sprites.create(assets.image`myImage`, SpriteKind.Player)
 P2luigi = sprites.create(assets.image`myImage0`, SpriteKind.Player)
 P3toad = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 P4Peach = sprites.create(assets.image`myImage2`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`GOOMBA`, SpriteKind.Player)
 P1_mario.setPosition(2, 192)
 P2luigi.setPosition(25, 192)
 P3toad.setPosition(40, 192)
@@ -204,18 +207,7 @@ splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion
 splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera4, splitScreen.CameraRegion.BottomRight)
 game.onUpdate(function () {
-    list = [
-    1,
-    2,
-    3,
-    4,
-    5
-    ]
-    list[1] = 0
-    list[2] = 0
-    list[3] = 0
-    list[4] = 0
-    list[5] = 0
+    list = [1, 2, 3]
 })
 game.onUpdateInterval(100, function () {
     P1_mario.ay = 300
