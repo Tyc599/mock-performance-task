@@ -41,6 +41,7 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+let list: number[] = []
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
 let P2luigi: Sprite = null
@@ -202,6 +203,20 @@ splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion
 splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera4, splitScreen.CameraRegion.BottomRight)
+game.onUpdate(function () {
+    list = [
+    1,
+    2,
+    3,
+    4,
+    5
+    ]
+    list[1] = 0
+    list[2] = 0
+    list[3] = 0
+    list[4] = 0
+    list[5] = 0
+})
 game.onUpdateInterval(100, function () {
     P1_mario.ay = 300
     P2luigi.ay = 300
