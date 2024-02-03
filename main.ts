@@ -9,6 +9,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, loc
     game.splash("womp womp", "try again")
     game.reset()
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
+    game.setGameOverMessage(true, "YIPPEE")
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     if (sprite.vy > 0 && otherSprite.isHittingTile(CollisionDirection.Bottom)) {
         sprite.ay = 0
