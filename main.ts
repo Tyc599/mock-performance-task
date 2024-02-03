@@ -1,6 +1,6 @@
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P2luigi.vy == 0) {
-        P2luigi.vy = -85
+        P2luigi.vy = -95
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
@@ -23,19 +23,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 })
 controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P4Peach.vy == 0) {
-        P4Peach.vy = -85
+        P4Peach.vy = -95
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P1_mario.vy == 0) {
-        P1_mario.vy = -85
+        P1_mario.vy = -95
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P3toad.vy == 0) {
-        P3toad.vy = -85
+        P3toad.vy = -95
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
