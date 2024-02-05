@@ -10,7 +10,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, loc
     game.reset()
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
-    game.setGameOverMessage(true, "YIPPEE")
+    game.splash("Yippee")
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     if (sprite.vy > 0 && otherSprite.isHittingTile(CollisionDirection.Bottom)) {
