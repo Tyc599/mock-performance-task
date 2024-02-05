@@ -4,15 +4,18 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+// If one sprites dies by overlapping with the spike block, then the whole game will have to reset.
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, location) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
     game.splash("womp womp", "try again")
     game.reset()
 })
+// Once a player reaches the black blocks at the castle, the game will register it as a win.
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
     game.splash("Yippee")
     game.gameOver(true)
 })
+// The function allows the sprites to jump onto each other and stay there for a while and resets the jump as if the sprite is on the ground allowing for the sprite to jump of another sprite.
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     if (sprite.vy > 0 && otherSprite.isHittingTile(CollisionDirection.Bottom)) {
         sprite.ay = 0
@@ -28,6 +31,7 @@ controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+// Sets the velocity in the sprites y axis so when the A button is pushed, it allows them to jump.
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     if (P1_mario.vy == 0) {
         P1_mario.vy = -95
@@ -40,6 +44,7 @@ controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+// The on start function builds the map and sets one of the wall block to be set to off so that the sprites can't get over to the other side without the help of another sprite. The function also sets the speed at which the sprite can move at, the starting positions and the split screen so that the players don't have to rely on one player to move.
 let list: number[] = []
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
@@ -212,6 +217,7 @@ game.onUpdateInterval(100, function () {
     P3toad.ay = 300
     P4Peach.ay = 300
 })
+// The on game update is supposed to check that if a player is on top of a certain block to allow the other side of the bridge to activate as a wall.
 game.onUpdateInterval(100, function () {
     if (P1_mario.tileKindAt(TileDirection.Bottom, assets.tile`myTile9`)) {
         tileUtil.setWalls(assets.tile`myTile2`, true)
