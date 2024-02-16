@@ -3,15 +3,50 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
         tileUtil.setWalls(assets.tile`myTile2`, true)
     }
 })
+controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("Up")
+})
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    let move_history_P2: string[] = []
+    move_history_P2.push("A")
     if (P2luigi.vy == 0) {
-        P2luigi.vy = -85
+        P2luigi.vy = jump_height
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spike`, function (sprite, location) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
-    game.splash("womp womp", "try again")
+    random_text = randint(1, 25)
+    if (1 <= random_text && random_text <= 5) {
+        game.splash("Good try", "Press A to Try again")
+    } else if (5 <= random_text && random_text <= 10) {
+        game.splash("Wommp Wommp", "Press A to Try again")
+    } else if (10 <= random_text && random_text <= 15) {
+        game.splash("get better", "Press A to Try again")
+    } else if (16 <= random_text && random_text <= 17) {
+        game.splash("ur bad", "Press A to Try again")
+    } else if (random_text == 18) {
+        game.splash("Try up,up,--------", "Press A to Try again")
+    } else if (random_text == 19) {
+        game.splash("Try --down,down,------", "Press A to Try again")
+    } else if (random_text == 20) {
+        game.splash("Try --,--,--,--,A,B", "Press A to Try again")
+    } else if (random_text == 21) {
+        game.splash("Try --,--,left,right,--,--", "Press A to Try again")
+    } else if (random_text == 22) {
+        game.splash("Try --,--,--,Left right,--", "Press A to Try again")
+    } else if (random_text == 23) {
+        game.splash("you're the worst player to every touch this game", "Press A to Try again")
+    } else if (random_text == 24) {
+        game.splash("your literal garbage", "Press A to Try again")
+    } else if (random_text == 25) {
+        game.splash("Close the game and get better", "Press A to Try again")
+    } else {
+    	
+    }
     game.reset()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
@@ -24,28 +59,78 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
     }
 })
 controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    let move_history_P4: string[] = []
+    move_history_P4.push("A")
     if (P4Peach.vy == 0) {
-        P4Peach.vy = -85
+        P4Peach.vy = jump_height
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
+controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("Right")
+})
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("A")
     if (P1_mario.vy == 0) {
-        P1_mario.vy = -85
+        P1_mario.vy = jump_height
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
 controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    let move_history_P3: string[] = []
+    move_history_P3.push("A")
     if (P3toad.vy == 0) {
-        P3toad.vy = -85
+        P3toad.vy = jump_height
     }
     music.play(music.createSoundEffect(WaveShape.Square, 1, 2225, 123, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 })
-let list: number[] = []
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("B")
+})
+function combo_scan (move_list: any[], combo_list: any[]) {
+    if (move_list.length >= 10) {
+        move_index = move_list.length - 1
+        combo_index = 0
+        for (let index = 0; index < combo_list.length; index++) {
+            if (move_list[move_index] != combo_list[combo_index]) {
+                return false
+            }
+            move_index += -1
+            combo_index += 1
+        }
+        return true
+    }
+    return false
+}
+controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("Left")
+})
+controller.player1.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
+    move_history_P1.push("Down")
+})
+let combo_index = 0
+let move_index = 0
+let random_text = 0
+let move_history_P1: string[] = []
+let speed = 0
 let P4Peach: Sprite = null
 let P3toad: Sprite = null
 let P2luigi: Sprite = null
 let P1_mario: Sprite = null
+let jump_height = 0
+jump_height = -85
+let Combo_list_store = [
+"B",
+"A",
+"Right",
+"Left",
+"Right",
+"Left",
+"Down",
+"Down",
+"Up",
+"up"
+]
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.setBackgroundImage(img`
     999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -183,10 +268,10 @@ controller.player1.moveSprite(P1_mario, 100, 0)
 controller.player2.moveSprite(P2luigi, 100, 0)
 controller.player3.moveSprite(P3toad, 100, 0)
 controller.player4.moveSprite(P4Peach, 100, 0)
-P1_mario.ay = 300
-P2luigi.ay = 300
-P3toad.ay = 300
-P4Peach.ay = 300
+P1_mario.ay = speed
+P2luigi.ay = speed
+P3toad.ay = speed
+P4Peach.ay = speed
 P1_mario.setStayInScreen(false)
 P2luigi.setStayInScreen(false)
 P3toad.setStayInScreen(false)
@@ -203,19 +288,17 @@ splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion
 splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera4, splitScreen.CameraRegion.BottomRight)
-game.onUpdate(function () {
-    list = [
-    1,
-    2,
-    3,
-    4,
-    5
-    ]
-    list[1] = 0
-    list[2] = 0
-    list[3] = 0
-    list[4] = 0
-    list[5] = 0
+forever(function () {
+    let list: number[] = []
+    pause(10)
+    if (combo_scan(move_history_P1, Combo_list_store)) {
+        jump_height = -150
+    } else {
+    	
+    }
+    if (list.length > 10) {
+        list.shift()
+    }
 })
 game.onUpdateInterval(100, function () {
     P1_mario.ay = 300
